@@ -1,0 +1,307 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "elements": [
+        {
+          "id": "delimitedDimension",
+          "label": "Delimited Dimension",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "dateID",
+          "label": "Date Dimension",
+          "type": "DIMENSION",
+          "options": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "id": "dataSetMetric",
+          "label": "Metric",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "fieldConfiguration",
+      "label": "Field Configuration",
+      "elements": [
+        {
+          "type": "SELECT_RADIO",
+          "id": "delimiter",
+          "label": "Delimiter",
+          "defaultValue": ",",
+          "options": [
+            {
+              "value": ",",
+              "label": "Comma (,)"
+            },
+            {
+              "value": "-",
+              "label": "Hyphen (-)"
+            },
+            {
+              "value": "|",
+              "label": "Pipe (|)"
+            },
+            {
+              "value": "\t",
+              "label": "Tab (\t)"
+            },
+            {
+              "value": "\n",
+              "label": "Newline (\n)"
+            }
+          ]
+        },
+        {
+          "type": "CHECKBOX",
+          "id": "hideRecordCount",
+          "label": "Hide Metric"
+        },
+        {
+          "type": "CHECKBOX",
+          "id": "allowMultiSelect",
+          "label": "Allow Multi-Select"
+        }
+      ]
+    },
+    {
+      "id": "textStyling",
+      "label": "Text",
+      "elements": [
+        {
+          "type": "FONT_COLOR",
+          "id": "fontColor",
+          "label": "Font Color",
+          "defaultValue": {
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "FONT_FAMILY",
+          "id": "textFontFamily",
+          "label": "Font Family",
+          "defaultValue": "Roboto"
+        },
+        {
+          "id": "buttonTextFontSize",
+          "label": "Button Font size",
+          "type": "FONT_SIZE"
+        }
+      ]
+    },
+    {
+      "id": "searchBoxStyling",
+      "label": "Search Box",
+      "elements": [
+        {
+          "id": "hideSearchBox",
+          "label": "Hide Search Box",
+          "type": "CHECKBOX"
+        },
+        {
+          "type": "FONT_COLOR",
+          "id": "searchBoxFontColor",
+          "label": "Font Color",
+          "defaultValue": {
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "FONT_FAMILY",
+          "id": "searchBoxFontFamily",
+          "label": "Font Family",
+          "defaultValue": "Roboto"
+        },
+        {
+          "type": "FONT_SIZE",
+          "id": "searchBoxFontSize",
+          "label": "Search Box Font Size",
+          "defaultValue": "12"
+        },
+        {
+          "id": "searchBoxPlaceholder",
+          "label": "Search Box Placeholder",
+          "type": "TEXTINPUT",
+          "defaultValue": "Type to search"
+        }
+      ]
+    },
+    {
+      "id": "checkboxStyling",
+      "label": "List Items",
+      "elements": [
+        {
+          "id": "checkboxDefaultOption",
+          "label": "Default Selection",
+          "type": "TEXTINPUT",
+          "defaultValue": ""
+        },
+        {
+          "id": "checkboxTextSize",
+          "label": "List Item Text Size",
+          "type": "FONT_SIZE"
+        },
+        {
+          "type": "FONT_COLOR",
+          "id": "checkboxFontColor",
+          "label": "Text Color"
+        },
+        {
+          "type": "GRID_COLOR",
+          "id": "checkboxDividerColor",
+          "label": "Divider Color"
+        },
+        {
+          "type": "FILL_COLOR",
+          "id": "checkboxBackgroundColor",
+          "label": "Background Color"
+        },
+        {
+          "id": "checkboxBackgroundOpacity",
+          "label": "Background Opacity",
+          "type": "OPACITY",
+          "defaultValue": "1"
+        },
+        {
+          "id": "checkboxBorderRadius",
+          "label": "Border Radius",
+          "type": "BORDER_RADIUS",
+          "defaultValue": "4"
+        },
+        {
+          "type": "BORDER_COLOR",
+          "id": "checkboxBorderColor",
+          "label": "Border Color"
+        },
+        {
+          "type": "LINE_WEIGHT",
+          "id": "checkboxBorderWidth",
+          "label": "Border Weight",
+          "defaultValue": "1"
+        }
+      ]
+    }
+    ,
+    {
+      "id": "containerStyling",
+      "label": "Container",
+      "elements": [
+        {
+          "id": "containerTransparentBackground",
+          "label": "Transparent Background",
+          "type": "CHECKBOX"
+        },
+        {
+          "type": "FILL_COLOR",
+          "id": "containerBackgroundColor",
+          "label": "Background Color",
+          "defaultValue": { "color": "#ffffff" }
+        },
+        {
+          "id": "containerBackgroundOpacity",
+          "label": "Background Opacity",
+          "type": "OPACITY",
+          "defaultValue": "1"
+        },
+        {
+          "id": "containerBorderRadius",
+          "label": "Border Radius",
+          "type": "BORDER_RADIUS",
+          "defaultValue": "8"
+        },
+        {
+          "type": "BORDER_COLOR",
+          "id": "containerBorderColor",
+          "label": "Border Color",
+          "defaultValue": { "color": "#dadce0" }
+        },
+        {
+          "type": "LINE_WEIGHT",
+          "id": "containerBorderWidth",
+          "label": "Border Weight",
+          "defaultValue": "0"
+        },
+        {
+          "id": "containerPadding",
+          "label": "Padding (CSS, e.g. 8px or 8px 12px)",
+          "type": "TEXTINPUT",
+          "defaultValue": "0"
+        }
+      ]
+    },
+    {
+      "id": "controlBoxStyling",
+      "label": "Control Box (Header)",
+      "elements": [
+        {
+          "id": "controlBoxTransparentBackground",
+          "label": "Transparent Background",
+          "type": "CHECKBOX"
+        },
+        {
+          "type": "FILL_COLOR",
+          "id": "controlBoxBackgroundColor",
+          "label": "Background Color",
+          "defaultValue": { "color": "#ffffff" }
+        },
+        {
+          "id": "controlBoxBackgroundOpacity",
+          "label": "Background Opacity",
+          "type": "OPACITY",
+          "defaultValue": "1"
+        },
+        {
+          "id": "controlBoxBorderRadius",
+          "label": "Border Radius",
+          "type": "BORDER_RADIUS",
+          "defaultValue": "8"
+        },
+        {
+          "type": "BORDER_COLOR",
+          "id": "controlBoxBorderColor",
+          "label": "Border Color",
+          "defaultValue": { "color": "#dadce0" }
+        },
+        {
+          "type": "LINE_WEIGHT",
+          "id": "controlBoxBorderWidth",
+          "label": "Border Weight",
+          "defaultValue": "1"
+        },
+        {
+          "id": "controlBoxPadding",
+          "label": "Padding (CSS, e.g. 8px 12px)",
+          "type": "TEXTINPUT",
+          "defaultValue": "8px 12px"
+        },
+        {
+          "id": "controlBoxMinHeight",
+          "label": "Min Height (CSS, e.g. 48px)",
+          "type": "TEXTINPUT",
+          "defaultValue": "48px"
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "id": "crossFilter",
+      "supportedActions": ["FILTER"]
+    }
+  ]
+}

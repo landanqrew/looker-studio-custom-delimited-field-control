@@ -1,0 +1,24 @@
+{
+  "name": "Targeted Date Range Control",
+  "organization": "QREW",
+  "description": "A date selector that filters specific date columns, allowing for multiple independent date filters on a single dashboard.",
+  "logoUrl": "https://raw.githubusercontent.com/google/dscc-scripts/master/viz/assets/logo.png",
+  "organizationUrl": "https://github.com/landanqrew",
+  "supportUrl": "https://github.com/landanqrew/looker-studio-custom-delimited-field-control/issues",
+  "privacyPolicyUrl": "https://github.com/landanqrew/looker-studio-custom-delimited-field-control/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/landanqrew/looker-studio-custom-delimited-field-control/blob/main/TERMS.md",
+  "packageUrl": "https://github.com/landanqrew/looker-studio-custom-delimited-field-control",
+  "devMode": true,
+  "components": [
+    {
+      "name": "Delimited Field Control",
+      "description": "Select a date range to filter a specific date column.",
+      "iconUrl": "https://raw.githubusercontent.com/google/dscc-scripts/master/viz/assets/icon.png",
+      "resource": {
+        "js": "gs://qrew-looker-studio-visualizations/custom-delimited-field-control/dev/index.js",
+        "config": "gs://qrew-looker-studio-visualizations/custom-delimited-field-control/dev/index.json",
+        "css": "gs://qrew-looker-studio-visualizations/custom-delimited-field-control/dev/index.css"
+      }
+    }
+  ]
+}
