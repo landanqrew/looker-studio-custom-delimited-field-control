@@ -639,6 +639,31 @@ const drawViz = function(data) {
   */
   document.body.appendChild(container);
 
+  // Calculate and set dynamic dropdown sizing based on visualization dimensions
+  function updateDropdownSizing() {
+    const viewportHeight = window.innerHeight;
+    const headerHeight = valuesHeader.offsetHeight || 48;
+    const searchBoxHeight = hideSearchBox ? 0 : (searchContainer ? searchContainer.offsetHeight : 60);
+    const selectionSummaryHeight = 0; // Hidden by default
+    const padding = 20; // Buffer space for borders, shadows, etc.
+    
+    // Calculate available height for dropdown content (below the header)
+    const dropdownMaxHeight = Math.max(100, viewportHeight - headerHeight - padding);
+    
+    // Calculate available height for options list (inside dropdown, minus search box)
+    const optionsMaxHeight = Math.max(60, dropdownMaxHeight - searchBoxHeight - selectionSummaryHeight - padding);
+    
+    // Set CSS variables on the document root
+    document.documentElement.style.setProperty('--dropdown-max-height', dropdownMaxHeight + 'px');
+    document.documentElement.style.setProperty('--options-max-height', optionsMaxHeight + 'px');
+  }
+  
+  // Initial sizing calculation
+  updateDropdownSizing();
+  
+  // Update sizing on window resize
+  window.addEventListener('resize', updateDropdownSizing);
+
   // Track if this is a re-render (i.e., we have a selection to re-apply after DOM rebuild)
   const isRerender = selectedOptions.length > 0;
   console.log('Is this a re-render?', isRerender, 'with', selectedOptions.length, 'selections');
@@ -655,6 +680,19 @@ const drawViz = function(data) {
     });
     
     console.log('Selected options:', selectedOptions);
+    
+    // Update the header label to reflect current selections
+    let updatedHeaderText = delimiterField.name || 'Select Values';
+    if (delimiterField.name && selectedOptions.length > 0 && allowMultiSelect) {
+      const selectedOptionsString = selectedOptions.join(', ');
+      updatedHeaderText = delimiterField.name + ' (' + (selectedOptionsString.length > 30 ? selectedOptionsString.slice(0, 27) + '...' : selectedOptionsString) + ')';
+    } else if (delimiterField.name && selectedOptions.length > 0 && !allowMultiSelect) {
+      updatedHeaderText = delimiterField.name + ' (' + selectedOptions[0] + ')';
+    }
+    headerLabel.innerText = updatedHeaderText;
+    
+    // Update the selection summary count
+    selectionSummary.innerText = selectedOptions.length + ' selected';
     
     if (selectedOptions.length === 0) {
       // Clear filter if nothing selected
